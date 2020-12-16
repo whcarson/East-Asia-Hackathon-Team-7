@@ -30,10 +30,25 @@ class User extends React.Component {
     }
 }
 
+const center = (lat, lon) => {
+    return {
+        lat: lat,
+        lon: lon
+    }
+}
+
+function TopNav() {
+    return (
+        
+        <div id="topnav">
+            <button ></button>
+        </div>
+    )
+}
 
 function FirstMenu() {
     return (
-        <div>
+        <div id="firstMenu">
             <form>
                 <label for="username">Input Username: </label>
                 <input type="text" id="username" name="username"></input> <br />
