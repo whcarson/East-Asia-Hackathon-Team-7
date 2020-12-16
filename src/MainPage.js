@@ -10,6 +10,8 @@ class User extends React.Component {
             _id: null,
             _lat: null,
             _lon: null,
+            _local: false,
+            _mode: null
         }
     }
     set id(username){

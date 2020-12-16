@@ -1,17 +1,18 @@
 import React from 'react'
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
+
 const containerStyle = {
   width: '800px',
   height: '800px'
 };
 
-const center = {
+let center = {
   lat: -3.745,
   lng: -38.523
 };
 
-function MyComponent() {
+function Map() {
   const [map, setMap] = React.useState(null)
 
   const onLoad = React.useCallback(function callback(map) {
@@ -42,4 +43,14 @@ function MyComponent() {
   )
 }
 
-export default React.memo(MyComponent)
+function Pin(){
+    return (
+        {
+            lat: null,
+            lon: null,
+            color: 'red'
+        }
+    )
+} 
+
+export default React.memo(Map)
