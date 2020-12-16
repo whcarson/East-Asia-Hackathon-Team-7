@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { User, FirstMenu } from './MainPage.js'
-import MyComponent from './MapAPI.js'
+import Combined from './MainPage.js'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <MyComponent />
+    <Combined />
   </React.StrictMode>,
   document.getElementById('root')
 );

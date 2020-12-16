@@ -1,5 +1,7 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import MyComponent from './MapAPI'
 
 class User extends React.Component {
     constructor(props){
@@ -59,4 +61,13 @@ function FirstMenu() {
     )
 }
 
-export { User, FirstMenu }
+function Combined() {
+    return (
+        <div id='all'>
+            <FirstMenu />
+            <MyComponent />
+        </div>
+    )
+}
+
+export default Combined;
