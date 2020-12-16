@@ -43,14 +43,18 @@ function Map() {
   )
 }
 
-function Pin(){
+function Pin(lat, lon, local){
     return (
         {
-            lat: null,
-            lon: null,
-            color: 'red'
+            lat: lat,
+            lon: lon,
+            color: local ? 'red' : 'blue',
+            descriptor: "",
+            addDescription: (str) => {
+                this.descriptor = str;
+            }
         }
     )
-} 
+}
 
 export default React.memo(Map)
