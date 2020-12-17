@@ -1,5 +1,5 @@
 import React from 'react'
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 
 const containerStyle = {
@@ -14,7 +14,6 @@ let center = {
 
 function Map() {
   const [map, setMap] = React.useState(null)
-
   const onLoad = React.useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds();
     map.fitBounds(bounds);
@@ -31,17 +30,18 @@ function Map() {
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={center}
+        center={{lat: 0, lng: 20}}
         zoom={10}
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
-        { /* Child components, such as markers, info windows, etc. */ }
+        {<Marker position={{ lat: -34.397, lng: 150.644 }} />}
         <></>
       </GoogleMap>
     </LoadScript>
   )
 }
+
 
 function Pin(lat, lon, local){
     return (
@@ -54,6 +54,16 @@ function Pin(lat, lon, local){
                 this.descriptor = str;
             }
         }
+    )
+}
+
+function PinStack(pins){
+    return (
+        <div>
+            pins.map(function(pin) {
+                return <Marker position={{lat: pin.lat, lng: pin.lon}} />;
+            });
+        </div>
     )
 }
 
